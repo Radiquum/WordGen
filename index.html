@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordGen</title>
+</head>
+
+<body>
+    <h1>WordGen</h1>
+    <div>
+        <label for="MAX_SYLLABLES">Max syllables</label>
+        <div>
+            <input type="range" id="MAX_SYLLABLES_range" min="1" max="10" value="3"
+                onchange="change_max_syllables_range()">
+            <input type="number" id="MAX_SYLLABLES_number" min="1" max="10" value="3"
+                onchange="change_max_syllables_number()">
+        </div>
+    </div>
+    <div>
+        <label for="MAX_WORDS">Max words</label>
+        <div>
+            <input type="range" id="MAX_WORDS_range" min="1" max="20" value="10" onchange="change_max_words_range()">
+            <input type="number" id="MAX_WORDS_number" min="1" max="20" value="10" onchange="change_max_words_number()">
+        </div>
+    </div>
+    <div>
+        <p>Strategy</p>
+        <div>
+            <input type="radio" id="random" name="strategy" value="random" checked>
+            <label for="random">random</label>
+            <input type="radio" id="chem_el" name="strategy" value="chem_el">
+            <label for="chem_el">from chemistry elements</label>
+        </div>
+    </div>
+    <div>
+        <p>Include</p>
+        <div>
+            <input type="checkbox" id="v" name="v" value="v" checked>
+            <label for="v">&ltvowel&gt</label>
+            <input type="checkbox" id="vc" name="vc" value="vc" checked>
+            <label for="vc">&ltvowel&gt&ltconsent&gt</label>
+            <input type="checkbox" id="cv" name="cv" value="cv" checked>
+            <label for="cv">&ltconsent&gt&ltvowel&gt</label>
+            <input type="checkbox" id="cvc" name="cvc" value="cvc" checked>
+            <label for="cvc">&ltconsent&gt&ltvowel&gt&ltconsent&gt</label>
+            <input type="checkbox" id="chem_sym" name="chem_sym" value="chem_sym" checked>
+            <label for="chem_sym">chemistry elements symbols</label>
+        </div>
+    </div>
+    <button onclick="print_random()">Generate</button>
+    <div>
+        <h2>Output</h2>
+        <div id="output">
+        </div>
+    </div>
+    <div>
+        <h2>Liked</h2>
+        <div id="liked">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
