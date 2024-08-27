@@ -95,7 +95,7 @@ function print_liked() {
   liked.forEach((word) => {
     document.getElementById(
       "liked"
-    ).innerHTML += `<p>${word} <button onclick="dislike('${word}')">Dislike</button> <button onclick="mutate_char('${word}')">Mutate Char</button> <button onclick="mutate_syl('${word}')">Mutate Syllable</button></p>`;
+    ).innerHTML += `<div class="word"><p>${word}</p><div class="btns"><button onclick="dislike('${word}')">Dislike</button> <button onclick="mutate_char('${word}')">Mutate Char</button> <button onclick="mutate_syl('${word}')">Mutate Syllable</button></div></div>`;
   });
 }
 
@@ -134,7 +134,7 @@ function print_random_syllable() {
     }
     document.getElementById(
       "output"
-    ).innerHTML += `<p>${word} <button onclick="like('${word}')">Like</button> <button onclick="mutate_char('${word}')">Mutate Char</button> <button onclick="mutate_syl('${word}')">Mutate Syllable</button></p>`;
+    ).innerHTML += `<div class="word"><p>${word}</p><div class="btns"><button onclick="like('${word}')">Like</button> <button onclick="mutate_char('${word}')">Mutate Char</button> <button onclick="mutate_syl('${word}')">Mutate Syllable</button></div></div>`;
   }
 }
 
@@ -155,7 +155,7 @@ function mutate_char(word) {
     new_word = new_word.join("");
     document.getElementById(
       "output"
-    ).innerHTML += `<p>${new_word} <button onclick="like('${new_word}')">Like</button> <button onclick="mutate_char('${new_word}')">Mutate Char</button>  <button onclick="mutate_syl('${new_word}')">Mutate Syllable</button></p>`;
+    ).innerHTML += `<div class="word"><p>${new_word}</p><div class="btns"><button onclick="like('${new_word}')">Like</button> <button onclick="mutate_char('${new_word}')">Mutate Char</button>  <button onclick="mutate_syl('${new_word}')">Mutate Syllable</button></div></div>`;
   }
 }
 
@@ -186,7 +186,7 @@ function mutate_syl(word) {
 
     document.getElementById(
       "output"
-    ).innerHTML += `<p>${new_word} <button onclick="like('${new_word}')">Like</button> <button onclick="mutate_char('${new_word}')">Mutate Char</button> <button onclick="mutate_syl('${new_word}')">Mutate Syllable</button></p>`;
+    ).innerHTML += `<div class="word"><p>${new_word}</p><div class="btns"><button onclick="like('${new_word}')">Like</button> <button onclick="mutate_char('${new_word}')">Mutate Char</button> <button onclick="mutate_syl('${new_word}')">Mutate Syllable</button></div></div>`;
   }
 }
 
